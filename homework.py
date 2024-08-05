@@ -485,6 +485,89 @@
 
 
 
+# Davaleba 28:
+# import socket
+# import threading
+
+# def handle_client(client_socket, address, log_file):
+#     print(f"[+] New connection from {address}")
+
+#     while True:
+#         try:
+#             message = client_socket.recv(1024).decode("utf-8")
+#             if not message:
+#                 break
+        
+#             with open(log_file, "a") as f:
+#                 f.write(f"{address}: {message}\n")
+
+#             print(f"[{address}] {message}")
+#             client_socket.send(f"Received: {message}".encode("utf-8"))
+    
+#         except ConnectionResetError:
+#             break
+
+#     print(f"[-] Connection closed from {address}")
+#     client_socket.close
+
+# def main():
+#     server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+#     server.bind(('127.0.0.1', 65142))
+#     server.listen(5)
+#     print("[*] Server started on 127.0.0.1:65432")
+
+#     log_file = 'chat_log.txt'
+
+#     while True:
+#         client_socket, addr = server.accept()
+#         client_handler = threading.Thread(target=handle_client, args=(client_socket, addr, log_file))
+#         client_handler.start()
+    
+# if __name__ == "__main__":
+#     main()
+
+
+
+# Davaleba 29(1):
+# import asyncio
+
+# async def task_one():
+#     print("Task one started.")
+#     await asyncio.sleep(2)
+#     print("Task one finished.")
+
+# async def task_two():
+#     print("Task two started.")
+#     await asyncio.sleep(5)
+#     print("Task two finished.")
+
+# async def main():
+#     task1 = asyncio.create_task(task_one())
+#     task2 = asyncio.create_task(task_two())
+
+#     await task1
+#     await task2
+
+# asyncio.run(main())
+
+
+# # Davaleba 29(2):
+# import asyncio
+# import random
+
+# async def print_random():
+#     for _ in range(5):
+#         random_number = random.randint(1, 10)
+#         print(f"Random number: {random_number}")
+#         await asyncio.sleep(random.randint(1, 3))
+
+# async def main():
+#     await print_random()
+
+# asyncio.run(main())
+
+
+
 
 # # Davaleba 32:
 # import sqlite3
