@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Main Page</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/style.css' %}">
+</head>
+<body>
+    <center>
+    <h1>Welcome to my Blog</h1>
+    <br>
+    <ul>
+        {% for post in posts %}
+            <li>
+                <div class="card">
+                    <div class="card-body">
+                      <h3 class="card-title">{{ post.title }}</h3>
+                      <p class="card-text">{{ post.content }}</p>
+                      <div class="publ-div">
+                       <b><p class="published">Published on: {{ post.published_date }}</p></b>
+                      </div>
+                    </div>
+                  </div>
+            </li>
+        {% endfor %}
+    </ul>
+    </center>
+</body>
+</html>
